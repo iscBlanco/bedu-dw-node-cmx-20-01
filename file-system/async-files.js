@@ -1,3 +1,5 @@
+// Usando métodos síncronos
+
 const fs = require('fs');
 const path = require('path');
 
