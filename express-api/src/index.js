@@ -25,9 +25,10 @@ app.get('/', (req, res) => {
 });
 
 // Create a second route
-app.get('/api/notes', (req, res) => {
-  res.json(notes);
-});
+// app.get('/api/notes', (req, res) => {
+//   res.json(notes);
+// });
+app.use('/api', require('./handlers'));
 
 // Mounting express application on specific port
 app.listen(APP_PORT, () => {
