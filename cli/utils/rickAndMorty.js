@@ -3,6 +3,9 @@ const axios = require('axios');
 
 module.exports = async () => {
   const { data } = await axios.get('https://rickandmortyapi.com/api/character');
+
+  // Data? 
+
   // data.results = [..., ..., ...]
 
   const choices = data.results.map(character => {
@@ -19,8 +22,13 @@ module.exports = async () => {
         choices,
       }
     ])
-    .then(answers => {
+    .then(async answers => {
       // TODO: Show the character info from API
       // https://rickandmortyapi.com/api/character/{id}
+
+      const { character_id } = answers;
+      const { data } = await axios.get(`https://rickandmortyapi.com/api/character/${character_id}`);
+
+      console.table(Object.entries(data));
     });
 }
