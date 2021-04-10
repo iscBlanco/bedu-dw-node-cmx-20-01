@@ -1,0 +1,10 @@
+{
+  "name": "express-api",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
